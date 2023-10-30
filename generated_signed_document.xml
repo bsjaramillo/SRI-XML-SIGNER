@@ -59,58 +59,58 @@
     <campoAdicional nombre="Teléfono">2123123</campoAdicional>
     <campoAdicional nombre="Email">gfeguiguren@sri.gob.ec</campoAdicional>
   </infoAdicional>
-  <ds:Signature Id="Signature826699" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:etsi="http://uri.etsi.org/01903/v1.3.2#">
-    <ds:SignedInfo Id="Signature-SignedInfo513051">
+  <ds:Signature Id="Signature873144" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:etsi="http://uri.etsi.org/01903/v1.3.2#">
+    <ds:SignedInfo Id="Signature-SignedInfo342832">
       <ds:CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
       <ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
-      <ds:Reference Id="SignedPropertiesID498337" Type="http://uri.etsi.org/01903#SignedProperties" URI="#Signature826699-SignedProperties660294">
+      <ds:Reference Id="SignedPropertiesID578828" Type="http://uri.etsi.org/01903#SignedProperties" URI="#Signature873144-SignedProperties840655">
         <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
-        <ds:DigestValue>yIfie8mUHA+bzpeQxnwpoC2CVHok08VUiLJDlcjB1Ho=</ds:DigestValue>
+        <ds:DigestValue>PeyTvpfMD8/OcvGILKSYHeAqy4b93ulWeJYkIOUEw88=</ds:DigestValue>
       </ds:Reference>
-      <ds:Reference URI="#Certificate0773749">
+      <ds:Reference URI="#Certificate0620708">
         <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
-        <ds:DigestValue>jaPnYYmHY5qd6TEjQsWrdA0Mp4C3pXHePZfUCV9usxU=</ds:DigestValue>
+        <ds:DigestValue>BJm4gSgLsbEPkdQ+3JTtfpX/8680YoesfGLguZmqQn8=</ds:DigestValue>
       </ds:Reference>
-      <ds:Reference Id="Reference-ID-383063" URI="#comprobante">
+      <ds:Reference Id="Reference-ID-310606" URI="#comprobante">
         <ds:Transforms>
           <ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
         </ds:Transforms>
         <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
-        <ds:DigestValue>jaPnYYmHY5qd6TEjQsWrdA0Mp4C3pXHePZfUCV9usxU=</ds:DigestValue>
+        <ds:DigestValue>BJm4gSgLsbEPkdQ+3JTtfpX/8680YoesfGLguZmqQn8=</ds:DigestValue>
       </ds:Reference>
     </ds:SignedInfo>
-    <ds:SignatureValue Id="SignatureValue572376">B5+rjZkVjUcIye8w+WcVEwpkWs7zZdYo+OB29yajt/AJqFfO/6RtpyLUVTOO0r/7Q+WAmXxgMl6e1dFwRIm9jMgdoRP/9ejkOEDSjt8+10UttYXtFRy6WJ/PkCJW4nGw1yzvZCRUgWplRpuy038vAcQ6vDX5LpfuATNRVn0KlMhdld+4GO6491V8Ku6qYdWzRH9sStMEjWMPWbmGr4PMLIVWRP8uJidq7LXsPiLQp8sjCogM/+fdRznKYvIsV8vTfPwWRQAFI9i/eY1zum6S5NnaInU2HqblmfmRP9/6eWjb6Ycp0QGVdhrovprPx7CTwIa6VTcuC2ZWcSuUepCPvg==</ds:SignatureValue>
-    <ds:KeyInfo Id="Certificate0773749">
+    <ds:SignatureValue Id="SignatureValue762180">DV+w1v5hMY979UrOrQQ2XDeO43BctaWRdcV2iM/apcYpGSpvya3ktn/FDthRfhjHDpzx7KmLaxALdP/YNbOKkFSV7hc4JcO/CWIoeijnbTX6qNqDTx6xQQdmTgb0FDlC2qGvzG6+YS7YKzoY2Dt18rMJKsunFBp5cTtLtmjcDJpt8/mJtV/a9eRAToje12iSVwp4Sc1bkOcvLWo9VpaRh8jUjvZ1Q9CW/TKDvGu2PAOwH2NPK8nVK06aHLDYf7rzxN6oQVJPqIdkm6FTa/wq9rBiy19DoNrbp/lcIAwsB/k97H9XxCT80EfkamPysZfPQTgrL4lFENcDFnoI6agldQ==</ds:SignatureValue>
+    <ds:KeyInfo Id="Certificate0620708">
       <ds:X509Data>
-        <ds:X509Certificate>MIILuzCCCaOgAwIBAgIEVA5JTjANBgkqhkiG9w0BAQsFADCBmTELMAkGA1UEBhMCRUMxHTAbBgNVBAoMFFNFQ1VSSVRZIERBVEEgUy5BLiAxMTAwLgYDVQQLDCdFTlRJREFEIERFIENFUlRJRklDQUNJT04gREUgSU5GT1JNQUNJT04xOTA3BgNVBAMMMEFVVE9SSURBRCBERSBDRVJUSUZJQ0FDSU9OIFNVQkNBLTEgU0VDVVJJVFkgREFUQTAeFw0yMDExMDUyMjE0MjRaFw0yMzExMDUyMjE0MjRaMIGkMQswCQYDVQQGEwJFQzEdMBsGA1UECgwUU0VDVVJJVFkgREFUQSBTLkEuIDExMDAuBgNVBAsMJ0VOVElEQUQgREUgQ0VSVElGSUNBQ0lPTiBERSBJTkZPUk1BQ0lPTjEVMBMGA1UEBRMMMDUxMTIwMTcyNDI2MS0wKwYDVQQDDCRFU1RIRUxBIEdVSUxMRVJNSU5BIEFSQVVKTyBBTEVKQU5EUk8wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDRUSrMm1gwrILCJ79VSbUCmZMTdkC3X02qz/pFnkyBKuR8K9UEtB0AkpwIVhsUK9LBpFxR3YzrQgdP9rGUThelKUTEF4Le3gdBn4zC+CuDxSWDA6IPY8as+BwnS7MkGoJvfjAhcXcmtG+cvUJ/hPFisuuUGtDsQIv79HJvM2tV8dS3F230SZCtWNme5DcqG/1Ib/PMp6IE/43PduwsPNFXf3n6NpBwDUPH4fP89EdS/24cmhZPtzzyxPzb3y8Luf1hLXvVQSMS0LfMOw+vMgFR/qxSU8PWVKUnqbftNL5GBXvzfF0OHy8x2xgk86w9Y1NMi/9ZSw177rz+OmHLL1bnAgMBAAGjggb8MIIG+DBZBggrBgEFBQcBAQRNMEswSQYIKwYBBQUHMAGGPWh0dHA6Ly9vY3NwZ3cuc2VjdXJpdHlkYXRhLm5ldC5lYy9lamJjYS9wdWJsaWN3ZWIvc3RhdHVzL29jc3AwHQYDVR0OBBYEFLE2OSjokb1oecI+z1QFa0nie0qyMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUXA+FpHQQ/K0BLBoAPZMXCfo5AdYwKwYDVR0QBCQwIoAPMjAyMDExMDUyMjE0MjRagQ8yMDIzMTEwNTIyMTQyNFowgcwGA1UdLgSBxDCBwTCBvqCBu6CBuIaBtWxkYXA6Ly9sZGFwc2Quc2VjdXJpdHlkYXRhLm5ldC5lYy9DTj1BVVRPUklEQUQgREUgQ0VSVElGSUNBQ0lPTiBTVUJDQS0xIFNFQ1VSSVRZIERBVEEsT1U9RU5USURBRCBERSBDRVJUSUZJQ0FDSU9OIERFIElORk9STUFDSU9OLE89U0VDVVJJVFkgREFUQSBTLkEuIDEsQz1FQz9kZWx0YVJldm9jYXRpb25MaXN0P2Jhc2UwgeIGA1UdIASB2jCB1zBaBgorBgEEAYKmcgIHMEwwSgYIKwYBBQUHAgIwPh48AEMAZQByAHQAaQBmAGkAYwBhAGQAbwAgAGQAZQAgAFAAZQByAHMAbwBuAGEAIABOAGEAdAB1AHIAYQBsMHkGCisGAQQBgqZyAgEwazBpBggrBgEFBQcCARZdaHR0cHM6Ly93d3cuc2VjdXJpdHlkYXRhLm5ldC5lYy9sZXllc19ub3JtYXRpdmFzL1BvbGl0aWNhcyBkZSBDZXJ0aWZpY2FkbyBQZXJzb25hIE5hdHVyYWwucGRmMIICngYDVR0fBIIClTCCApEwgeWgQaA/hj1odHRwOi8vb2NzcGd3LnNlY3VyaXR5ZGF0YS5uZXQuZWMvZWpiY2EvcHVibGljd2ViL3N0YXR1cy9vY3NwooGfpIGcMIGZMTkwNwYDVQQDDDBBVVRPUklEQUQgREUgQ0VSVElGSUNBQ0lPTiBTVUJDQS0xIFNFQ1VSSVRZIERBVEExMDAuBgNVBAsMJ0VOVElEQUQgREUgQ0VSVElGSUNBQ0lPTiBERSBJTkZPUk1BQ0lPTjEdMBsGA1UECgwUU0VDVVJJVFkgREFUQSBTLkEuIDExCzAJBgNVBAYTAkVDMIHEoIHBoIG+hoG7bGRhcDovL2xkYXBzZC5zZWN1cml0eWRhdGEubmV0LmVjL0NOPUFVVE9SSURBRCBERSBDRVJUSUZJQ0FDSU9OIFNVQkNBLTEgU0VDVVJJVFkgREFUQSxPVT1FTlRJREFEIERFIENFUlRJRklDQUNJT04gREUgSU5GT1JNQUNJT04sTz1TRUNVUklUWSBEQVRBIFMuQS4gMSxDPUVDP2NlcnRpZmljYXRlUmV2b2NhdGlvbkxpc3Q/YmFzZTCB36CB3KCB2YaB1mh0dHBzOi8vcG9ydGFsLW9wZXJhZG9yLnNlY3VyaXR5ZGF0YS5uZXQuZWMvZWpiY2EvcHVibGljd2ViL3dlYmRpc3QvY2VydGRpc3Q/Y21kPWNybCZpc3N1ZXI9Q049QVVUT1JJREFEIERFIENFUlRJRklDQUNJT04gU1VCQ0EtMSBTRUNVUklUWSBEQVRBLE9VPUVOVElEQUQgREUgQ0VSVElGSUNBQ0lPTiBERSBJTkZPUk1BQ0lPTixPPVNFQ1VSSVRZIERBVEEgUy5BLiAxLEM9RUMwCwYDVR0PBAQDAgXgMB8GA1UdEQQYMBaBFGFzZXNvcmFyamNAZ21haWwuY29tMBoGCisGAQQBgqZyAwEEDAwKMTEwMjQ5MTY5MTAjBgorBgEEAYKmcgMCBBUME0VTVEhFTEEgR1VJTExFUk1JTkEwFgYKKwYBBAGCpnIDAwQIDAZBUkFVSk8wGQYKKwYBBAGCpnIDBAQLDAlBTEVKQU5EUk8wOQYKKwYBBAGCpnIDBwQrDClFVUdFTklPIEVTUEVKTyBTTiBZIE1BTlVFTCBFTlJJUVVFIFJFTkdFTDAbBgorBgEEAYKmcgMIBA0MCzU5MzcyNjk1NDIxMBYGCisGAQQBgqZyAwkECAwGTUFDQVJBMB0GCisGAQQBgqZyAwsEDwwNMTEwMjQ5MTY5MTAwMTAXBgorBgEEAYKmcgMMBAkMB0VDVUFET1IwEQYKKwYBBAGCpnIDHQQDDAEuMBEGCisGAQQBgqZyAx4EAwwBLjAfBgorBgEEAYKmcgMgBBEMDzAwMjAwMTAwMDEwNTcwOTATBgorBgEEAYKmcgMhBAUMA1BGWDARBgorBgEEAYKmcgMiBAMMAS4wEQYKKwYBBAGCpnIDIwQDDAEuMA0GCSqGSIb3DQEBCwUAA4ICAQB0hlFniDrDpMc7BPtprSaA3vT7FH0myhrYosnTO4jCWRvaOtIiG0h3kAGxjCjJcqAoLNPsKRSax9kZjdYQ9Rms/4XGrMxqktQAzDbmuIlZkl+qKXhlQqPu8ludynR6RLZqWEFXCxXpQG35KfVORHUIADtlt/vHZVK54OxwmzilAKGps+h7AgQ1mQCKHKe57FgaJom17Lu5v7yPpQimuzGUFnR1/DbY+l8bTzyiJ7W3XqPI+KBCV7wWgfdPiGHqmceHMjqBTe1y2SOfRPVoiFtn76KrgkQErIvz2jmG416HtN4AoSa1xm7RnYqkAlhYI/1RvGSxPfHwiVWfIe8afWLVD07vxIc/7OoHmzKmKEs7uhNUm9wdj+fbqdIt8w614Q+DX3E8Z+TdkKAnWNKRpFL4F0iwHNP+8avsWjmCEKsotQ55LGTIhtAyC5n8tBMbsopfE3fSr/1WHdrVOo0jIwqP92Tp5Fl7DHZt/xdX8+JnDdYrraCWidMtIlhiTSBt18shLGyaqqDeU7IlkelAnkP1L2S297pki9YPHQco8LEVZ9t2PYPE3g39NI5LiQmNrp0wtspa+u/Hn4Yg9kkCRXyGlv2aG7q9+ZzDg9OEBYW1cHZYjdYOQEmoFzatWygCFsrb04Eun/PttkMrs97UlXJO+KBiPPzAY8KDawa21LS2Iw==</ds:X509Certificate>
+        <ds:X509Certificate>MIID3DCCAsSgAwIBAgIUOJ0QKhRP7S4eFx/STu7G9WzLakkwDQYJKoZIhvcNAQELBQAwgYAxCzAJBgNVBAYTAkVDMRIwEAYDVQQIEwlQSUNISU5DSEExDjAMBgNVBAcTBVFVSVRPMR0wGwYDVQQKExRTUkkgVEVTVEVSIFhBREVTIEJFUzEPMA0GA1UECxMGUFlUSE9OMR0wGwYDVQQDExRTUkkgVEVTVEVSIFhBREVTIEJFUzAeFw0yMzEwMzAyMzI1MjVaFw0zMzEwMzAyMzI1MjVaMIGAMQswCQYDVQQGEwJFQzESMBAGA1UECBMJUElDSElOQ0hBMQ4wDAYDVQQHEwVRVUlUTzEdMBsGA1UEChMUU1JJIFRFU1RFUiBYQURFUyBCRVMxDzANBgNVBAsTBlBZVEhPTjEdMBsGA1UEAxMUU1JJIFRFU1RFUiBYQURFUyBCRVMwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDN0cUYLplP3g9sC5pcw78aWqiENla6td3rZb+KuaOSO9vU8w5pHGbzLFzHdRydqIJ1h1gQ/ZXqRMwpiq8kbQ8pQrIXVO4ymLWS43xisskxLA7VbvLegP1yKbS2pwz3O7tdtqsRgIj7XmOTPXjRVa+ueGJpioI/Lbm7U8nrwGLXAiNxJCjYxNKyShJDGda6AaOan8i9Qzp9vrmiSgYL/OeTfOijT2LDK++TwV7feOVKPmPfv+vh5HYof94tK7chj9fRWNpfceg/zujgEIN/1kcWaHo1GPXA0JU/s9gXjmI5ilQNde2hEUGrBbSkJn2uVWEQW0Tit5IjHBQGI8ygyLsrAgMBAAGjTDBKMAkGA1UdEwQCMAAwEQYJYIZIAYb4QgEBBAQDAgTwMAsGA1UdDwQEAwIFoDAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwEwDQYJKoZIhvcNAQELBQADggEBAAkmAQa6cDSYRWEyzJq8yq53YDuIz4ib8EOx/xSCKhXj02iEY2I5qL/aPzTfc+ZJF+RHnYXUfL+CW5I1ROpA+lm7fOQWnVobIBMiOnLnYy939L2e5ahxmxdDcBkOL9dquMOCwEAq352tm7jET4OllA75TG1YRlwiGXyICdp7NtptlpMZC4Bn24AX5RM4QRrDZG6cCJQBK479CJokR+rpSz8IQAy5PJwXQuxXxEgJOBvNrrZ+7G2cq33zTRQfktZGLrAdR3HRymV1PUyMxFXUV1tKRDOfDTkuYnYG/FBEZ/TY4WzwuSRIyiGe3o+OoBbgihF8U9yCMi6L4oxRMDPmZnA=</ds:X509Certificate>
       </ds:X509Data>
       <ds:KeyValue>
         <ds:RSAKeyValue>
-          <ds:Modulus>0VEqzJtYMKyCwie/VUm1ApmTE3ZAt19Nqs/6RZ5MgSrkfCvVBLQdAJKcCFYbFCvSwaRcUd2M60IHT/axlE4XpSlExBeC3t4HQZ+Mwvgrg8UlgwOiD2PGrPgcJ0uzJBqCb34wIXF3JrRvnL1Cf4TxYrLrlBrQ7ECL+/RybzNrVfHUtxdt9EmQrVjZnuQ3Khv9SG/zzKeiBP+Nz3bsLDzRV395+jaQcA1Dx+Hz/PRHUv9uHJoWT7c88sT8298vC7n9YS171UEjEtC3zDsPrzIBUf6sUlPD1lSlJ6m37TS+RgV783xdDh8vMdsYJPOsPWNTTIv/WUsNe+68/jphyy9W5w==</ds:Modulus>
+          <ds:Modulus>zdHFGC6ZT94PbAuaXMO/GlqohDZWurXd62W/irmjkjvb1PMOaRxm8yxcx3UcnaiCdYdYEP2V6kTMKYqvJG0PKUKyF1TuMpi1kuN8YrLJMSwO1W7y3oD9cim0tqcM9zu7XbarEYCI+15jkz140VWvrnhiaYqCPy25u1PJ68Bi1wIjcSQo2MTSskoSQxnWugGjmp/IvUM6fb65okoGC/znk3zoo09iwyvvk8Fe33jlSj5j37/r4eR2KH/eLSu3IY/X0VjaX3HoP87o4BCDf9ZHFmh6NRj1wNCVP7PYF45iOYpUDXXtoRFBqwW0pCZ9rlVhEFtE4reSIxwUBiPMoMi7Kw==</ds:Modulus>
           <ds:Exponent>AQABAA==</ds:Exponent>
         </ds:RSAKeyValue>
       </ds:KeyValue>
     </ds:KeyInfo>
-    <ds:Object Id="Signature826699-Object977172">
-      <etsi:QualifyingProperties Target="#Signature826699">
-        <etsi:SignedProperties Id="Signature826699-SignedPropertiesID498337">
+    <ds:Object Id="Signature873144-Object119978">
+      <etsi:QualifyingProperties Target="#Signature873144">
+        <etsi:SignedProperties Id="Signature873144-SignedPropertiesID578828">
           <etsi:SignedSignatureProperties>
-            <etsi:SigningTime>2023-10-30T16:04:35</etsi:SigningTime>
+            <etsi:SigningTime>2023-10-30T18:27:45</etsi:SigningTime>
             <etsi:SigningCertificate>
               <etsi:Cert>
                 <etsi:CertDigest>
                   <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
-                  <ds:DigestValue>jaPnYYmHY5qd6TEjQsWrdA0Mp4C3pXHePZfUCV9usxU=</ds:DigestValue>
+                  <ds:DigestValue>BJm4gSgLsbEPkdQ+3JTtfpX/8680YoesfGLguZmqQn8=</ds:DigestValue>
                 </etsi:CertDigest>
                 <etsi:IssuerSerial>
-                  <ds:X509IssuerName>CN=AUTORIDAD DE CERTIFICACION SUBCA-1 SECURITY DATA,OU=ENTIDAD DE CERTIFICACION DE INFORMACION,O=SECURITY DATA S.A. 1,C=EC</ds:X509IssuerName>
-                  <ds:X509SerialNumber>1410222414</ds:X509SerialNumber>
+                  <ds:X509IssuerName>CN=SRI TESTER XADES BES,OU=PYTHON,O=SRI TESTER XADES BES,L=QUITO,ST=PICHINCHA,C=EC</ds:X509IssuerName>
+                  <ds:X509SerialNumber>323206108277738201986045592173754726287804164681</ds:X509SerialNumber>
                 </etsi:IssuerSerial>
               </etsi:Cert>
             </etsi:SigningCertificate>
           </etsi:SignedSignatureProperties>
           <etsi:SignedDataObjectProperties>
-            <etsi:DataObjectFormat ObjectReference="#Reference-ID-383063">
+            <etsi:DataObjectFormat ObjectReference="#Reference-ID-310606">
               <etsi:Description>contenido comprobante</etsi:Description>
               <etsi:MimeType>text/xml</etsi:MimeType>
             </etsi:DataObjectFormat>

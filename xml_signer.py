@@ -5,6 +5,7 @@ from cryptography.hazmat.primitives import hashes, serialization
 from cryptography.hazmat.primitives.asymmetric import padding
 from cryptography.hazmat.primitives.serialization.pkcs12 import load_key_and_certificates
 import xml.etree.ElementTree as ET
+import os
 
 
 # Namespaces
@@ -16,8 +17,20 @@ ET.register_namespace("ds", "http://www.w3.org/2000/09/xmldsig#")
 ET.register_namespace("etsi", "http://uri.etsi.org/01903/v1.3.2#")
 
 
-def load_xml_document(xml_path):
-    return ET.parse(xml_path)
+def load_xml_document(xml):
+    if isinstance(xml, ET.Element):
+        return xml
+    # Check if s is a file path
+    if os.path.isfile(xml):
+        _, ext = os.path.splitext(xml)
+        if ext.lower() == '.xml':
+            return ET.parse(xml).getroot()
+    
+    # Check if s is an XML string
+    try:
+        return ET.fromstring(xml)
+    except ET.ParseError:
+        raise Exception('Not a valid XML string or path: %s' % s)
 
 
 def load_p12(p12_path, password):
@@ -41,13 +54,12 @@ def encode_xml_to_base64(element):
                                         method='xml', encoding='utf-8')).decode("utf-8")
 
 
-if __name__ == "__main__":
-    xml_document = load_xml_document('sri_example.xml')
-    root_element = xml_document.getroot()
-    key, certificate = load_p12('p12_file.p12', 'password')
+def sign_xml(xml,p12_path,p12_password):
+    xml_document = load_xml_document(xml)
+    key, certificate = load_p12(p12_path, p12_password)
 
     # Create the Signature element and added to root element
-    signature = create_element(root_element,
+    signature = create_element(xml_document,
                                'Signature', **{"Id": f"Signature{generate_unique_id()}", "xmlns:ds": xmldsig_uri, "xmlns:etsi": xmletsi_uri})
 
     # Create the SignedInfo element and added to Signature element
@@ -77,8 +89,7 @@ if __name__ == "__main__":
         signed_info, method='xml', encoding='utf-8')
     digest = hashes.Hash(hashes.SHA256())
     digest.update(signed_info_bytes)
-    digest_value = base64.b64encode(digest.finalize()).decode("utf-8")
-    create_element(reference, 'DigestValue').text = digest_value
+    create_element(reference, 'DigestValue').text = base64.b64encode(digest.finalize()).decode("utf-8")
 
     # Create the Reference certificate element and added to SignedInfo element
     reference_certificate = create_element(signed_info, 'Reference', **{
@@ -88,14 +99,15 @@ if __name__ == "__main__":
     # Create the DigestMethod element and added to Reference certificate element
     create_element(reference_certificate, 'DigestMethod', **{
                    "Algorithm": "http://www.w3.org/2001/04/xmlenc#sha256"})
+
     # Create the DigestValue element and added to Reference certificate element
     # Calculate the digest value of the certificate and set it to the DigestValue element
     certificate_info_bytes = certificate.public_bytes(
         serialization.Encoding.DER)
     digest = hashes.Hash(hashes.SHA256())
     digest.update(certificate_info_bytes)
-    digest_value = base64.b64encode(digest.finalize()).decode("utf-8")
-    create_element(reference_certificate, 'DigestValue').text = digest_value
+    create_element(reference_certificate, 'DigestValue').text = base64.b64encode(digest.finalize()).decode("utf-8")
+
 
     # Create the Reference voucher element and added to SignedInfo element
     reference_voucher = create_element(signed_info, 'Reference', **{
@@ -118,17 +130,15 @@ if __name__ == "__main__":
         serialization.Encoding.DER)
     digest = hashes.Hash(hashes.SHA256())
     digest.update(certificate_info_bytes)
-    digest_value = base64.b64encode(digest.finalize()).decode("utf-8")
-    create_element(reference_voucher, 'DigestValue').text = digest_value
+    create_element(reference_voucher, 'DigestValue').text = base64.b64encode(digest.finalize()).decode("utf-8")
 
     # Create the SignatureValue element and added to Signature element
     # Calculate the signature value of the SignedInfo element and set it to the SignatureValue element
-    signature_value = create_element(
-        signature, 'SignatureValue', **{"Id": f"SignatureValue{generate_unique_id()}"})
 
     signature_value_bytes = key.sign(
         signed_info_bytes, padding.PKCS1v15(), hashes.SHA256())
-    signature_value.text = base64.b64encode(
+    create_element(
+        signature, 'SignatureValue', **{"Id": f"SignatureValue{generate_unique_id()}"}).text = base64.b64encode(
         signature_value_bytes).decode("utf-8")
 
     # Create the KeyInfo element and added to Signature element
@@ -140,8 +150,7 @@ if __name__ == "__main__":
 
     # Create the X509Certificate element and added to X509Data element
     # Set the certificate value to the X509Certificate element
-    x509_certificate = create_element(x509_data, 'X509Certificate')
-    x509_certificate.text = base64.b64encode(
+    create_element(x509_data, 'X509Certificate').text = base64.b64encode(
         certificate.public_bytes(serialization.Encoding.DER)).decode("utf-8")
 
     # Create KeyValue element and added to KeyInfo element
@@ -151,14 +160,12 @@ if __name__ == "__main__":
 
     # Create Modulus element and added to RSAKeyValue element
     # Set the modulus value of the certificate to the Modulus element
-    modulus = create_element(rsa_key_value, 'Modulus')
-    modulus.text = base64.b64encode(
+    create_element(rsa_key_value, 'Modulus').text = base64.b64encode(
         key.public_key().public_numbers().n.to_bytes(256, 'big')).decode("utf-8")
 
     # Create Exponent element and added to RSAKeyValue element
     # Set the exponent value of the certificate to the Exponent element
-    exponent = create_element(rsa_key_value, 'Exponent')
-    exponent.text = base64.b64encode(
+    create_element(rsa_key_value, 'Exponent').text = base64.b64encode(
         key.public_key().public_numbers().e.to_bytes(4, "little")).decode("utf-8")
 
     # Create Object element and added to Signature element
@@ -232,6 +239,11 @@ if __name__ == "__main__":
                    xmletsi_uri).text = "text/xml"
 
     ET.indent(xml_document)
-    xml_signed_filename = "generated_signed_document.xml"
-    xml_document.write(xml_signed_filename, method='xml',
-                       encoding="utf-8", xml_declaration=True)
+    return xml_document
+
+
+if __name__=="__main__":
+
+    xml_signed=sign_xml("sri_example.xml","digital_certificate.p12","password")
+    ET.ElementTree(xml_signed).write("generated_signed_document.xml", method='xml',
+                          encoding="utf-8", xml_declaration=True)
