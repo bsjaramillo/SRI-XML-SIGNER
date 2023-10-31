@@ -240,10 +240,3 @@ def sign_xml(xml,p12_path,p12_password):
 
     ET.indent(xml_document)
     return xml_document
-
-
-if __name__=="__main__":
-
-    xml_signed=sign_xml("sri_example.xml","digital_certificate.p12","password")
-    ET.ElementTree(xml_signed).write("generated_signed_document.xml", method='xml',
-                          encoding="utf-8", xml_declaration=True)
