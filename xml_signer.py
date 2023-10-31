@@ -30,7 +30,7 @@ def load_xml_document(xml):
     try:
         return ET.fromstring(xml)
     except ET.ParseError:
-        raise Exception('Not a valid XML string or path: %s' % s)
+        raise Exception('Not a valid XML string or path: %s' % xml)
 
 
 def load_p12(p12_path, password):
